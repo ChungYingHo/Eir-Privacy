@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eir — Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #faf5f5;
+      --fg: #2d2a2e;
+      --fg-secondary: #5a5560;
+      --accent: #9b8ea8;
+      --border: #e8e0e6;
+      --card-bg: #ffffff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1a2e;
+        --fg: #e0dce4;
+        --fg-secondary: #9b96a3;
+        --accent: #b8a9c9;
+        --border: #2d2a3a;
+        --card-bg: #22223a;
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.75;
+      padding: 3rem 1.5rem;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .subtitle {
+      color: var(--fg-secondary);
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+
+    .lang-switch {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .lang-switch button {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8rem;
+      color: var(--fg-secondary);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .lang-switch button:hover,
+    .lang-switch button.active {
+      border-color: var(--accent);
+      color: var(--fg);
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p, li {
+      color: var(--fg-secondary);
+      font-size: 0.95rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    .effective-date {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--fg-secondary);
+      font-size: 0.8rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--fg-secondary);
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .content[hidden] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Eir — Privacy Policy</h1>
+      <p class="subtitle">by Aira</p>
+      <div class="lang-switch">
+        <button class="active" id="btn-zh" onclick="switchLang('zh')">繁體中文</button>
+        <button id="btn-en" onclick="switchLang('en')">English</button>
+      </div>
+    </header>
+
+    <!-- 繁體中文 -->
+    <div class="content" id="content-zh">
+      <h2>概述</h2>
+      <p>Eir 是由 Aira 開發的離線桌面日記與專注氛圍應用程式。我們尊重您的隱私，Eir 的設計核心是「本地優先」——您的資料屬於您自己。</p>
+
+      <h2>資料儲存</h2>
+      <p>Eir 的所有資料（日記、設定、圖片附件）預設僅儲存在您的本機電腦上。我們不營運任何伺服器來蒐集、儲存或處理您的個人資料。</p>
+
+      <h2>Google Drive 同步（選擇性啟用）</h2>
+      <p>Eir 提供 Google Drive 雲端同步功能，此功能完全由您自主決定是否啟用：</p>
+      <ul>
+        <li>同步功能預設為關閉，需要您主動連接 Google 帳號才會啟用</li>
+        <li>Eir 使用 <code>drive.file</code> 權限範圍，僅能存取 Eir 自己建立的檔案，無法讀取您 Google Drive 中的其他任何檔案</li>
+        <li>同步的資料僅存放在您自己的 Google Drive 中，Aira 無法存取您的 Google Drive 內容</li>
+        <li>您可以隨時在設定中斷開 Google Drive 連接</li>
+      </ul>
+
+      <h2>我們不蒐集的資料</h2>
+      <p>Eir 不包含任何遙測、分析追蹤或廣告模組。具體而言：</p>
+      <ul>
+        <li>不蒐集使用行為或統計數據</li>
+        <li>不傳送任何資料到 Aira 的伺服器（我們沒有伺服器）</li>
+        <li>不使用 cookies 或第三方追蹤工具</li>
+        <li>不蒐集裝置資訊、IP 位址或地理位置</li>
+      </ul>
+
+      <h2>第三方服務</h2>
+      <p>Eir 使用以下第三方服務：</p>
+      <ul>
+        <li><strong>Google Drive API</strong>——僅在您主動啟用同步功能時使用，受 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 隱私政策</a>規範</li>
+        <li><strong>Steam</strong>（透過 Steam 發行時）——受 <a href="https://store.steampowered.com/privacy_agreement/" target="_blank" rel="noopener">Steam 隱私政策</a>規範</li>
+      </ul>
+
+      <h2>兒童隱私</h2>
+      <p>Eir 不針對 13 歲以下的兒童，也不會刻意蒐集兒童的個人資訊。</p>
+
+      <h2>隱私政策的變更</h2>
+      <p>如本政策有重大變更，我們會在應用程式內通知您。您可以隨時在此頁面查閱最新版本。</p>
+
+      <h2>聯絡方式</h2>
+      <p>如果您對隱私政策有任何疑問，請透過電子郵件聯繫我們。</p>
+
+      <p class="effective-date">生效日期：2026 年 4 月 10 日</p>
+    </div>
+
+    <!-- English -->
+    <div class="content" id="content-en" hidden>
+      <h2>Overview</h2>
+      <p>Eir is an offline desktop diary and ambient focus application developed by Aira. We respect your privacy. Eir is designed to be local-first — your data belongs to you.</p>
+
+      <h2>Data Storage</h2>
+      <p>All Eir data (diary entries, settings, image attachments) is stored exclusively on your local computer by default. We do not operate any servers to collect, store, or process your personal data.</p>
+
+      <h2>Google Drive Sync (Optional)</h2>
+      <p>Eir offers an optional Google Drive sync feature that is entirely under your control:</p>
+      <ul>
+        <li>Sync is disabled by default and requires you to actively connect your Google account</li>
+        <li>Eir uses the <code>drive.file</code> scope, which only allows access to files created by Eir itself — it cannot read any other files in your Google Drive</li>
+        <li>Synced data is stored only in your own Google Drive. Aira cannot access your Google Drive content</li>
+        <li>You can disconnect Google Drive at any time from the settings page</li>
+      </ul>
+
+      <h2>Data We Do Not Collect</h2>
+      <p>Eir contains no telemetry, analytics, or advertising modules. Specifically:</p>
+      <ul>
+        <li>No usage behavior or statistics are collected</li>
+        <li>No data is transmitted to Aira's servers (we have none)</li>
+        <li>No cookies or third-party tracking tools are used</li>
+        <li>No device information, IP addresses, or geolocation data is collected</li>
+      </ul>
+
+      <h2>Third-Party Services</h2>
+      <p>Eir integrates with the following third-party services:</p>
+      <ul>
+        <li><strong>Google Drive API</strong> — used only when you actively enable the sync feature, subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a></li>
+        <li><strong>Steam</strong> (when distributed via Steam) — subject to <a href="https://store.steampowered.com/privacy_agreement/" target="_blank" rel="noopener">Steam's Privacy Policy</a></li>
+      </ul>
+
+      <h2>Children's Privacy</h2>
+      <p>Eir is not directed at children under 13 and does not knowingly collect personal information from children.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>If this policy undergoes significant changes, we will notify you within the application. You can always view the latest version on this page.</p>
+
+      <h2>Contact</h2>
+      <p>If you have any questions about this privacy policy, please contact us via email.</p>
+
+      <p class="effective-date">Effective date: April 10, 2026</p>
+    </div>
+
+    <footer>
+      Eir by Aira
+    </footer>
+  </div>
+
+  <script>
+    function switchLang(lang) {
+      document.getElementById('content-zh').hidden = lang !== 'zh';
+      document.getElementById('content-en').hidden = lang !== 'en';
+      document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+  </script>
+</body>
+</html>
