@@ -4,144 +4,241 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eir — Privacy Policy</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+TC:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    /* ── Eir color palette ───────────────────────────────────────────── */
     :root {
-      --bg: #faf5f5;
-      --fg: #2d2a2e;
-      --fg-secondary: #5a5560;
-      --accent: #9b8ea8;
-      --border: #e8e0e6;
-      --card-bg: #ffffff;
+      /* Light — sakura warmth (hue 345) */
+      --bg: #fdf6f8;
+      --bg-card: rgba(255, 255, 255, 0.65);
+      --bg-card-border: rgba(168, 80, 120, 0.12);
+      --fg: #3a2030;
+      --fg-secondary: #7a6070;
+      --fg-hint: #a08898;
+      --accent: #a85078;
+      --accent-soft: rgba(168, 80, 120, 0.08);
+      --border: rgba(168, 80, 120, 0.1);
+      --divider: rgba(168, 80, 120, 0.08);
+      --btn-bg: rgba(168, 80, 120, 0.06);
+      --btn-border: rgba(168, 80, 120, 0.15);
+      --btn-active-bg: rgba(168, 80, 120, 0.12);
+      --btn-active-border: rgba(168, 80, 120, 0.3);
+      --code-bg: rgba(168, 80, 120, 0.07);
+      --link: #a85078;
+      --shadow: 0 8px 32px rgba(168, 80, 120, 0.08), 0 1px 4px rgba(0,0,0,0.04);
+      --blur: 16px;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #1a1a2e;
+        /* Dark — silver moonlight (hue 250) */
+        --bg: #12101e;
+        --bg-card: rgba(30, 28, 50, 0.7);
+        --bg-card-border: rgba(140, 130, 180, 0.1);
         --fg: #e0dce4;
-        --fg-secondary: #9b96a3;
-        --accent: #b8a9c9;
-        --border: #2d2a3a;
-        --card-bg: #22223a;
+        --fg-secondary: #9b96a8;
+        --fg-hint: #6a6578;
+        --accent: #b8a9d0;
+        --accent-soft: rgba(140, 130, 180, 0.08);
+        --border: rgba(140, 130, 180, 0.08);
+        --divider: rgba(140, 130, 180, 0.06);
+        --btn-bg: rgba(140, 130, 180, 0.06);
+        --btn-border: rgba(140, 130, 180, 0.12);
+        --btn-active-bg: rgba(140, 130, 180, 0.14);
+        --btn-active-border: rgba(140, 130, 180, 0.3);
+        --code-bg: rgba(140, 130, 180, 0.1);
+        --link: #c0b4d8;
+        --shadow: 0 8px 32px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.15);
+        --blur: 20px;
       }
     }
 
-    * {
+    /* ── Reset ────────────────────────────────────────────────────────── */
+    *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    /* ── Body ─────────────────────────────────────────────────────────── */
     body {
-      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Nunito', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
       color: var(--fg);
-      line-height: 1.75;
+      line-height: 1.8;
+      min-height: 100vh;
       padding: 3rem 1.5rem;
     }
 
+    /* ── Glass card ───────────────────────────────────────────────────── */
     .container {
       max-width: 680px;
       margin: 0 auto;
+      background: var(--bg-card);
+      backdrop-filter: blur(var(--blur));
+      -webkit-backdrop-filter: blur(var(--blur));
+      border: 1px solid var(--bg-card-border);
+      border-radius: 1.25rem;
+      box-shadow: var(--shadow);
+      padding: 2.5rem 3rem;
     }
 
+    @media (max-width: 720px) {
+      .container {
+        padding: 2rem 1.5rem;
+        border-radius: 1rem;
+      }
+    }
+
+    /* ── Header ───────────────────────────────────────────────────────── */
     header {
-      margin-bottom: 2.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .title-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
     }
 
     h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-
-    .subtitle {
-      color: var(--fg-secondary);
-      font-size: 0.875rem;
-      margin-top: 0.25rem;
-    }
-
-    .lang-switch {
-      margin-top: 1rem;
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .lang-switch button {
-      background: none;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 0.25rem 0.75rem;
-      font-size: 0.8rem;
-      color: var(--fg-secondary);
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-
-    .lang-switch button:hover,
-    .lang-switch button.active {
-      border-color: var(--accent);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
       color: var(--fg);
     }
 
-    h2 {
-      font-size: 1.1rem;
+    .subtitle {
+      color: var(--fg-hint);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    .lang-switch {
+      margin-top: 0.85rem;
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .lang-switch button {
+      background: var(--btn-bg);
+      border: 1px solid var(--btn-border);
+      border-radius: 0.5rem;
+      padding: 0.2rem 0.7rem;
+      font-family: inherit;
+      font-size: 0.78rem;
       font-weight: 600;
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
+      color: var(--fg-hint);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      letter-spacing: 0.02em;
+    }
+
+    .lang-switch button:hover {
+      border-color: var(--btn-active-border);
+      color: var(--fg-secondary);
+      background: var(--btn-active-bg);
+    }
+
+    .lang-switch button.active {
+      border-color: var(--btn-active-border);
+      color: var(--accent);
+      background: var(--btn-active-bg);
+    }
+
+    /* ── Content ──────────────────────────────────────────────────────── */
+    h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--fg);
+      margin-top: 1.75rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
     }
 
     p, li {
       color: var(--fg-secondary);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      line-height: 1.85;
     }
 
     ul {
       padding-left: 1.25rem;
-      margin-top: 0.5rem;
+      margin-top: 0.4rem;
     }
 
     li {
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.3rem;
+    }
+
+    li::marker {
+      color: var(--accent);
+    }
+
+    code {
+      background: var(--code-bg);
+      padding: 0.15em 0.4em;
+      border-radius: 0.3rem;
+      font-size: 0.85em;
+      font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+      color: var(--accent);
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    a:hover {
+      border-bottom-color: var(--link);
+    }
+
+    strong {
+      color: var(--fg);
+      font-weight: 600;
     }
 
     .effective-date {
-      margin-top: 2.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      color: var(--fg-secondary);
-      font-size: 0.8rem;
-    }
-
-    footer {
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      color: var(--fg-secondary);
-      font-size: 0.8rem;
-      text-align: center;
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--divider);
+      color: var(--fg-hint);
+      font-size: 0.78rem;
     }
 
     .content[hidden] {
       display: none;
+    }
+
+    /* ── Footer ───────────────────────────────────────────────────────── */
+    footer {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--divider);
+      color: var(--fg-hint);
+      font-size: 0.78rem;
+      text-align: center;
+      letter-spacing: 0.08em;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Eir — Privacy Policy</h1>
-      <p class="subtitle">by Aira</p>
+      <div class="title-row">
+        <h1>Eir</h1>
+        <span class="subtitle">Privacy Policy</span>
+      </div>
+      <p class="subtitle" style="margin-top: 0.15rem;">by Aira Studio</p>
       <div class="lang-switch">
         <button class="active" id="btn-zh" onclick="switchLang('zh')">繁體中文</button>
         <button id="btn-en" onclick="switchLang('en')">English</button>
@@ -151,7 +248,7 @@
     <!-- 繁體中文 -->
     <div class="content" id="content-zh">
       <h2>概述</h2>
-      <p>Eir 是由 Aira 開發的離線桌面日記與專注氛圍應用程式。我們尊重您的隱私，Eir 的設計核心是「本地優先」——您的資料屬於您自己。</p>
+      <p>Eir 是由 Aira Studio 開發的離線桌面日記與專注氛圍應用程式。我們尊重您的隱私，Eir 的設計核心是「本地優先」——您的資料屬於您自己。</p>
 
       <h2>資料儲存</h2>
       <p>Eir 的所有資料（日記、設定、圖片附件）預設僅儲存在您的本機電腦上。我們不營運任何伺服器來蒐集、儲存或處理您的個人資料。</p>
@@ -161,7 +258,7 @@
       <ul>
         <li>同步功能預設為關閉，需要您主動連接 Google 帳號才會啟用</li>
         <li>Eir 使用 <code>drive.file</code> 權限範圍，僅能存取 Eir 自己建立的檔案，無法讀取您 Google Drive 中的其他任何檔案</li>
-        <li>同步的資料僅存放在您自己的 Google Drive 中，Aira 無法存取您的 Google Drive 內容</li>
+        <li>同步的資料僅存放在您自己的 Google Drive 中，Aira Studio 無法存取您的 Google Drive 內容</li>
         <li>您可以隨時在設定中斷開 Google Drive 連接</li>
       </ul>
 
@@ -169,7 +266,7 @@
       <p>Eir 不包含任何遙測、分析追蹤或廣告模組。具體而言：</p>
       <ul>
         <li>不蒐集使用行為或統計數據</li>
-        <li>不傳送任何資料到 Aira 的伺服器（我們沒有伺服器）</li>
+        <li>不傳送任何資料到 Aira Studio 的伺服器（我們沒有伺服器）</li>
         <li>不使用 cookies 或第三方追蹤工具</li>
         <li>不蒐集裝置資訊、IP 位址或地理位置</li>
       </ul>
@@ -196,7 +293,7 @@
     <!-- English -->
     <div class="content" id="content-en" hidden>
       <h2>Overview</h2>
-      <p>Eir is an offline desktop diary and ambient focus application developed by Aira. We respect your privacy. Eir is designed to be local-first — your data belongs to you.</p>
+      <p>Eir is an offline desktop diary and ambient focus application developed by Aira Studio. We respect your privacy. Eir is designed to be local-first — your data belongs to you.</p>
 
       <h2>Data Storage</h2>
       <p>All Eir data (diary entries, settings, image attachments) is stored exclusively on your local computer by default. We do not operate any servers to collect, store, or process your personal data.</p>
@@ -206,7 +303,7 @@
       <ul>
         <li>Sync is disabled by default and requires you to actively connect your Google account</li>
         <li>Eir uses the <code>drive.file</code> scope, which only allows access to files created by Eir itself — it cannot read any other files in your Google Drive</li>
-        <li>Synced data is stored only in your own Google Drive. Aira cannot access your Google Drive content</li>
+        <li>Synced data is stored only in your own Google Drive. Aira Studio cannot access your Google Drive content</li>
         <li>You can disconnect Google Drive at any time from the settings page</li>
       </ul>
 
@@ -214,7 +311,7 @@
       <p>Eir contains no telemetry, analytics, or advertising modules. Specifically:</p>
       <ul>
         <li>No usage behavior or statistics are collected</li>
-        <li>No data is transmitted to Aira's servers (we have none)</li>
+        <li>No data is transmitted to Aira Studio's servers (we have none)</li>
         <li>No cookies or third-party tracking tools are used</li>
         <li>No device information, IP addresses, or geolocation data is collected</li>
       </ul>
@@ -239,7 +336,7 @@
     </div>
 
     <footer>
-      Eir by Aira
+      Eir by Aira Studio
     </footer>
   </div>
 
